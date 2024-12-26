@@ -1,4 +1,5 @@
 from pathlib import Path
+import sys
 
 def visualize_directory_structure(directory_path):
     path = Path(directory_path)
@@ -17,4 +18,13 @@ def visualize_directory_structure(directory_path):
     print(f"Structure of '{directory_path}':")
     display_dir_content(path)
 
-visualize_directory_structure("../goit-pycore-hw-04")
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python task_3.py <directory_path>")
+        return
+    
+    directory_path = sys.argv[1]
+    visualize_directory_structure(directory_path)
+
+if __name__ == "__main__":
+    main()
