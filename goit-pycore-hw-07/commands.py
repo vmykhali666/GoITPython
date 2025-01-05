@@ -52,7 +52,7 @@ def birthdays(args, book: AddressBook):
     upcoming = book.get_upcoming_birthdays(days)
     if not upcoming:
         return "No upcoming birthdays."
-    return "\n".join([f"{name}: in {days_left} days" for name, days_left in upcoming])
+    return "\n".join([f"{name}: in {days_left} days" for name, days_left in upcoming.items()])
 
 @input_error
 def change_contact(args, book: AddressBook):
